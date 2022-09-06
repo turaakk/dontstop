@@ -25,12 +25,9 @@ function generateRandom(min = 0, max = 100) {
 function generateFood(){
     let food = document.createElement('div')
     GENERATED_FOOD.push(food)
-    // food.setAttribute('id', 'food' + GENERATED_FOOD.length)
     food.setAttribute('id', 'food')
-
     food.style.setProperty("top", generateRandom(0, FIELD_HEIGHT - 200) + "px");
     food.style.setProperty("left", generateRandom(0, FIELD_WIDTH - 100)+ "px");
-
     food.style.position = 'absolute';
     food.style.height = '100px'
     food.style.width = '100px'
@@ -70,7 +67,6 @@ function mouseOverPlayer(){
 }
 
 function playerMovement(e){
-    // MOVING = true
     MOUSE_TOP = e.pageY
     MOUSE_LEFT = e.pageX
     player.style.top = MOUSE_TOP + 'px'
@@ -81,9 +77,6 @@ function gameloop(){
     healthStatus.innerHTML = HEALTH.toString().split('.')[0]
     pointStatus.innerHTML = POINTS.toString().split('.')[0]
     if(MOVING){
-        // if(HEALTH < 100){
-        //     // HEALTH += .1
-        // }
     }else{
         HEALTH -= .1
         player.style.backgroundColor = generateRandomColor()
